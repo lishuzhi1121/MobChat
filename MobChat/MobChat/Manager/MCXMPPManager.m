@@ -16,7 +16,7 @@ static const UInt16 hostPort = 5222;
 
 static MCXMPPManager *instance = nil;
 
-@interface MCXMPPManager()<XMPPStreamDelegate, XMPPAutoPingDelegate>
+@interface MCXMPPManager()<XMPPStreamDelegate, XMPPAutoPingDelegate, XMPPRosterDelegate>
 
 // 账号密码
 @property(nonatomic, copy) NSString *passwd;
@@ -97,7 +97,7 @@ static MCXMPPManager *instance = nil;
     // 模块使用一般步骤: 创建模块->设置属性->(监听数据)->激活模块
     
     // 心跳检测模块
-    self.xmppAutoPing.pingInterval = 5.0f;
+    self.xmppAutoPing.pingInterval = 10.0f;
     self.xmppAutoPing.pingTimeout = 10.0f;
     self.xmppAutoPing.respondsToQueries = YES;
     [self.xmppAutoPing addDelegate:self delegateQueue:dispatch_get_main_queue()];
@@ -108,9 +108,13 @@ static MCXMPPManager *instance = nil;
     [self.xmppReconnect activate:self.xmppStream];
     
     // 花名册模块
-    self.xmppRoster.autoAcceptKnownPresenceSubscriptionRequests = YES;
+    self.xmppRoster.autoAcceptKnownPresenceSubscriptionRequests = NO;
     self.xmppRoster.autoFetchRoster = YES;
+    [self.xmppRoster addDelegate:self delegateQueue:dispatch_get_main_queue()];
     [self.xmppRoster activate:self.xmppStream];
+    
+    //消息缓存模块
+    [self.xmppMessageArchiving activate:self.xmppStream];
 }
 
 
@@ -145,10 +149,10 @@ static MCXMPPManager *instance = nil;
 //    NSError *error = nil;
 //    XMPPPresence *presence = [[XMPPPresence alloc] initWithXMLString:@"<presence type=\"available\" />" error:&error];
     XMPPPresence *presence = [XMPPPresence presence];
-    DDXMLElement *showElement = [DDXMLElement elementWithName:@"show" stringValue:@"dnd"];
+    DDXMLElement *showElement = [DDXMLElement elementWithName:@"show" stringValue:@"chat"];
     [presence addChild:showElement];
     // 必须先设置默认可选状态
-    DDXMLElement *statusElement = [DDXMLElement elementWithName:@"status" stringValue:@"最近比较烦~"];
+    DDXMLElement *statusElement = [DDXMLElement elementWithName:@"status" stringValue:@"来找我呀~"];
     [presence addChild:statusElement];
     
     [self.xmppStream sendElement:presence];
@@ -171,6 +175,54 @@ static MCXMPPManager *instance = nil;
 - (void)xmppAutoPingDidTimeout:(XMPPAutoPing *)sender {
     NSLog(@"心跳检测超时!");
 }
+
+#pragma mark - XMPPRosterDelegate
+
+- (void)xmppRoster:(XMPPRoster *)sender didReceivePresenceSubscriptionRequest:(XMPPPresence *)presence {
+    // 这里要区分"我主动加别人"还是"别人加我"?
+    // CoreData 查询数据
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"XMPPUserCoreDataStorageObject" inManagedObjectContext:[XMPPRosterCoreDataStorage sharedInstance].mainThreadManagedObjectContext];
+    fetchRequest.entity = entity;
+    // 设置过滤条件
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"ask = 'subscribe'"];
+    fetchRequest.predicate = predicate;
+    NSError *error = nil;
+    NSArray *result = [[XMPPRosterCoreDataStorage sharedInstance].mainThreadManagedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    for (XMPPUserCoreDataStorageObject *contact in result) {
+        // 我主动添加别人的时候,别人订阅我时直接同意.
+        if ([contact.jid.bare isEqualToString:presence.from.bare]) {
+            [self.xmppRoster acceptPresenceSubscriptionRequestFrom:presence.from andAddToRoster:YES];
+            NSString *msg = [NSString stringWithFormat:@"%@ 已经同意添加您为好友!", presence.from.bare];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"好友通知" message:msg preferredStyle:UIAlertControllerStyleAlert];
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertController animated:YES completion:^{
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [alertController dismissViewControllerAnimated:YES completion:nil];
+                });
+            }];
+            
+            return;
+        }
+    }
+    
+    // 下面是别人加我为好友
+    NSString *msg = [NSString stringWithFormat:@"收到来自 %@ 的好友请求!", presence.from.bare];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"好友请求" message:msg preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"拒绝" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [self.xmppRoster rejectPresenceSubscriptionRequestFrom:presence.from];
+    }];
+    [alertController addAction:cancel];
+    
+    UIAlertAction *sure = [UIAlertAction actionWithTitle:@"接受" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self.xmppRoster acceptPresenceSubscriptionRequestFrom:presence.from andAddToRoster:YES];
+    }];
+    [alertController addAction:sure];
+    
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertController animated:YES completion:nil];
+    
+}
+
 
 #pragma mark - 懒加载
 
@@ -204,4 +256,13 @@ static MCXMPPManager *instance = nil;
     }
     return _xmppRoster;
 }
+
+- (XMPPMessageArchiving *)xmppMessageArchiving {
+    if (!_xmppMessageArchiving) {
+        _xmppMessageArchiving = [[XMPPMessageArchiving alloc] initWithMessageArchivingStorage:[XMPPMessageArchivingCoreDataStorage sharedInstance] dispatchQueue:dispatch_get_main_queue()];
+    }
+    return _xmppMessageArchiving;
+}
+
+
 @end

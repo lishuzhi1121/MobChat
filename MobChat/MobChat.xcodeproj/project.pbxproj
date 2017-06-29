@@ -161,6 +161,7 @@
 		33DB74631F04B79700AFCBCF /* MCContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DB74551F04B79700AFCBCF /* MCContactsTableViewController.m */; };
 		33DB74641F04B79700AFCBCF /* MCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DB745B1F04B79700AFCBCF /* MCLoginViewController.m */; };
 		33DB74681F04B83B00AFCBCF /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33DB74661F04B83B00AFCBCF /* Root.storyboard */; };
+		33DB746B1F05443200AFCBCF /* MCChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DB746A1F05443200AFCBCF /* MCChatViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -479,6 +480,8 @@
 		33DB745A1F04B79700AFCBCF /* MCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCLoginViewController.h; sourceTree = "<group>"; };
 		33DB745B1F04B79700AFCBCF /* MCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCLoginViewController.m; sourceTree = "<group>"; };
 		33DB74671F04B83B00AFCBCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Root.storyboard; sourceTree = "<group>"; };
+		33DB74691F05443200AFCBCF /* MCChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCChatViewController.h; sourceTree = "<group>"; };
+		33DB746A1F05443200AFCBCF /* MCChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCChatViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1477,6 +1480,8 @@
 		33DB744F1F04B79700AFCBCF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				33DB74691F05443200AFCBCF /* MCChatViewController.h */,
+				33DB746A1F05443200AFCBCF /* MCChatViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1694,6 +1699,7 @@
 				33DB73E71F04B46100AFCBCF /* XMPPRoomMessageMemoryStorageObject.m in Sources */,
 				33DB73E31F04B46100AFCBCF /* XMPPRoomHybridStorage.m in Sources */,
 				33DB740C1F04B46100AFCBCF /* XMPPMessageArchiving.xcdatamodeld in Sources */,
+				33DB746B1F05443200AFCBCF /* MCChatViewController.m in Sources */,
 				33DB74281F04B46100AFCBCF /* NSXMLElement+XEP_0335.m in Sources */,
 				33DB73EC1F04B46100AFCBCF /* XMPPvCard.xcdatamodeld in Sources */,
 				33DB722D1F04B22900AFCBCF /* ViewController.m in Sources */,
@@ -2003,6 +2009,7 @@
 				33DB723B1F04B22900AFCBCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

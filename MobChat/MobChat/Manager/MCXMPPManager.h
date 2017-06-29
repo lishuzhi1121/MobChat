@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@class XMPPJID;
-
 @interface MCXMPPManager : NSObject
 
 // 数据流对象,直接负责Socket通信
@@ -20,6 +18,8 @@
 @property(nonatomic, strong) XMPPReconnect *xmppReconnect;
 // 好友模块
 @property(nonatomic, strong) XMPPRoster *xmppRoster;
+// 消息缓存模块
+@property(nonatomic, strong) XMPPMessageArchiving *xmppMessageArchiving;
 
 /**
  单例对象

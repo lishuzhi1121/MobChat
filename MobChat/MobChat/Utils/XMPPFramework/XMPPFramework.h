@@ -27,6 +27,10 @@
 // List the modules you're using here:
 // (the following may not be a complete list)
 
+// 消息缓存模块
+#import "XMPPMessageArchiving.h"
+#import "XMPPMessageArchivingCoreDataStorage.h"
+
 //#import "XMPPBandwidthMonitor.h"
 // 
 //#import "XMPPCoreDataStorage.h"
