@@ -1,0 +1,331 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		33DB72271F04B22900AFCBCF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DB72261F04B22900AFCBCF /* main.m */; };
+		33DB722A1F04B22900AFCBCF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DB72291F04B22900AFCBCF /* AppDelegate.m */; };
+		33DB722D1F04B22900AFCBCF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DB722C1F04B22900AFCBCF /* ViewController.m */; };
+		33DB72301F04B22900AFCBCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33DB722E1F04B22900AFCBCF /* Main.storyboard */; };
+		33DB72321F04B22900AFCBCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33DB72311F04B22900AFCBCF /* Assets.xcassets */; };
+		33DB72351F04B22900AFCBCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33DB72331F04B22900AFCBCF /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		33DB72221F04B22900AFCBCF /* MobChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33DB72261F04B22900AFCBCF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		33DB72281F04B22900AFCBCF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		33DB72291F04B22900AFCBCF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		33DB722B1F04B22900AFCBCF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		33DB722C1F04B22900AFCBCF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		33DB722F1F04B22900AFCBCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		33DB72311F04B22900AFCBCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		33DB72341F04B22900AFCBCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		33DB72361F04B22900AFCBCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		33DB721F1F04B22900AFCBCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		33DB72191F04B22900AFCBCF = {
+			isa = PBXGroup;
+			children = (
+				33DB72241F04B22900AFCBCF /* MobChat */,
+				33DB72231F04B22900AFCBCF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		33DB72231F04B22900AFCBCF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				33DB72221F04B22900AFCBCF /* MobChat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		33DB72241F04B22900AFCBCF /* MobChat */ = {
+			isa = PBXGroup;
+			children = (
+				33DB72281F04B22900AFCBCF /* AppDelegate.h */,
+				33DB72291F04B22900AFCBCF /* AppDelegate.m */,
+				33DB722B1F04B22900AFCBCF /* ViewController.h */,
+				33DB722C1F04B22900AFCBCF /* ViewController.m */,
+				33DB72251F04B22900AFCBCF /* Supporting Files */,
+			);
+			path = MobChat;
+			sourceTree = "<group>";
+		};
+		33DB72251F04B22900AFCBCF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				33DB722E1F04B22900AFCBCF /* Main.storyboard */,
+				33DB72311F04B22900AFCBCF /* Assets.xcassets */,
+				33DB72331F04B22900AFCBCF /* LaunchScreen.storyboard */,
+				33DB72361F04B22900AFCBCF /* Info.plist */,
+				33DB72261F04B22900AFCBCF /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		33DB72211F04B22900AFCBCF /* MobChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33DB72391F04B22900AFCBCF /* Build configuration list for PBXNativeTarget "MobChat" */;
+			buildPhases = (
+				33DB721E1F04B22900AFCBCF /* Sources */,
+				33DB721F1F04B22900AFCBCF /* Frameworks */,
+				33DB72201F04B22900AFCBCF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MobChat;
+			productName = MobChat;
+			productReference = 33DB72221F04B22900AFCBCF /* MobChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		33DB721A1F04B22900AFCBCF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "李树志";
+				TargetAttributes = {
+					33DB72211F04B22900AFCBCF = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = Q87QUX3533;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 33DB721D1F04B22900AFCBCF /* Build configuration list for PBXProject "MobChat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 33DB72191F04B22900AFCBCF;
+			productRefGroup = 33DB72231F04B22900AFCBCF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				33DB72211F04B22900AFCBCF /* MobChat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		33DB72201F04B22900AFCBCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33DB72351F04B22900AFCBCF /* LaunchScreen.storyboard in Resources */,
+				33DB72321F04B22900AFCBCF /* Assets.xcassets in Resources */,
+				33DB72301F04B22900AFCBCF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		33DB721E1F04B22900AFCBCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33DB722D1F04B22900AFCBCF /* ViewController.m in Sources */,
+				33DB722A1F04B22900AFCBCF /* AppDelegate.m in Sources */,
+				33DB72271F04B22900AFCBCF /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		33DB722E1F04B22900AFCBCF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33DB722F1F04B22900AFCBCF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		33DB72331F04B22900AFCBCF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33DB72341F04B22900AFCBCF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		33DB72371F04B22900AFCBCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		33DB72381F04B22900AFCBCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		33DB723A1F04B22900AFCBCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
+				DEVELOPMENT_TEAM = Q87QUX3533;
+				INFOPLIST_FILE = MobChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mob.MobChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "37fd227a-3a52-4d9c-be14-74559828bdbd";
+				PROVISIONING_PROFILE_SPECIFIER = MobProvisioningProfiles;
+			};
+			name = Debug;
+		};
+		33DB723B1F04B22900AFCBCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
+				DEVELOPMENT_TEAM = Q87QUX3533;
+				INFOPLIST_FILE = MobChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mob.MobChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "37fd227a-3a52-4d9c-be14-74559828bdbd";
+				PROVISIONING_PROFILE_SPECIFIER = MobProvisioningProfiles;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		33DB721D1F04B22900AFCBCF /* Build configuration list for PBXProject "MobChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33DB72371F04B22900AFCBCF /* Debug */,
+				33DB72381F04B22900AFCBCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33DB72391F04B22900AFCBCF /* Build configuration list for PBXNativeTarget "MobChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33DB723A1F04B22900AFCBCF /* Debug */,
+				33DB723B1F04B22900AFCBCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 33DB721A1F04B22900AFCBCF /* Project object */;
+}
