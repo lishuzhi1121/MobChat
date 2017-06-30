@@ -11,7 +11,7 @@
 static NSString *const sendReuseID = @"sended";
 static NSString *const receiveReuseID = @"received";
 
-@interface MCChatViewController ()<UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
+@interface MCChatViewController ()<UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UITextFieldDelegate>
 // 聊天信息tableView
 @property (weak, nonatomic) IBOutlet UITableView *chatTableView;
 // 查询结果控制器
@@ -49,6 +49,35 @@ static NSString *const receiveReuseID = @"received";
     });
 }
 
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    NSString *tempStr = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]; //清空空格
+    if([tempStr isEqualToString:@""] || tempStr.length == 0) {
+        NSString *msg = @"发送的内容不能为空";
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"消息提示" message:msg preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *sure = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:sure];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+        textField.text = @"";
+        return NO;
+    }
+    // type: 单聊为'chat' 群聊为'group'
+    XMPPMessage *msg = [XMPPMessage messageWithType:@"chat" to:self.contactJID];
+    
+    [msg addBody:textField.text];
+    
+    [[MCXMPPManager sharedManager].xmppStream sendElement:msg];
+    
+    textField.text = @"";
+    return YES;
+}
+
+
 #pragma mark - NSFetchedResultsControllerDelegate
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
@@ -72,7 +101,7 @@ static NSString *const receiveReuseID = @"received";
     
     XMPPMessageArchiving_Message_CoreDataObject *msgCDO = self.messages[indexPath.row];
     
-    if (msgCDO.outgoing) { //发送
+    if (msgCDO.isOutgoing) { //发送
         
         cell = [tableView dequeueReusableCellWithIdentifier:sendReuseID forIndexPath:indexPath];
         

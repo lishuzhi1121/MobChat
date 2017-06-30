@@ -20,6 +20,10 @@
 @property(nonatomic, strong) XMPPRoster *xmppRoster;
 // 消息缓存模块
 @property(nonatomic, strong) XMPPMessageArchiving *xmppMessageArchiving;
+// 电子名片缓存模块
+@property(nonatomic, strong) XMPPvCardTempModule *xmppvCard;
+// 头像缓存模块
+@property(nonatomic, strong) XMPPvCardAvatarModule *xmppAvatar;
 
 /**
  单例对象

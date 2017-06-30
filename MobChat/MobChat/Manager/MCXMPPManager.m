@@ -113,8 +113,14 @@ static MCXMPPManager *instance = nil;
     [self.xmppRoster addDelegate:self delegateQueue:dispatch_get_main_queue()];
     [self.xmppRoster activate:self.xmppStream];
     
-    //消息缓存模块
+    // 消息缓存模块
     [self.xmppMessageArchiving activate:self.xmppStream];
+    
+    // 电子名片模块
+    [self.xmppvCard activate:self.xmppStream];
+    
+    // 头像模块
+    [self.xmppAvatar activate:self.xmppStream];
 }
 
 
@@ -264,5 +270,18 @@ static MCXMPPManager *instance = nil;
     return _xmppMessageArchiving;
 }
 
+- (XMPPvCardTempModule *)xmppvCard {
+    if (!_xmppvCard) {
+        _xmppvCard = [[XMPPvCardTempModule alloc] initWithvCardStorage:[XMPPvCardCoreDataStorage sharedInstance] dispatchQueue:dispatch_get_main_queue()];
+    }
+    return _xmppvCard;
+}
+
+- (XMPPvCardAvatarModule *)xmppAvatar {
+    if (!_xmppAvatar) {
+        _xmppAvatar = [[XMPPvCardAvatarModule alloc] initWithvCardTempModule:self.xmppvCard dispatchQueue:dispatch_get_main_queue()];
+    }
+    return _xmppAvatar;
+}
 
 @end

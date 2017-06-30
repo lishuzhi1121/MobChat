@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		339451481F061CB3009ABF89 /* MCRecentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339451471F061CB3009ABF89 /* MCRecentTableViewController.m */; };
+		3394514B1F06308D009ABF89 /* MCMoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3394514A1F06308D009ABF89 /* MCMoreTableViewController.m */; };
+		3394514E1F0634A9009ABF89 /* MCMoreInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3394514D1F0634A9009ABF89 /* MCMoreInfoTableViewController.m */; };
+		339451511F06369A009ABF89 /* MCEditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339451501F06369A009ABF89 /* MCEditTableViewController.m */; };
 		33DB72271F04B22900AFCBCF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DB72261F04B22900AFCBCF /* main.m */; };
 		33DB722A1F04B22900AFCBCF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DB72291F04B22900AFCBCF /* AppDelegate.m */; };
 		33DB722D1F04B22900AFCBCF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DB722C1F04B22900AFCBCF /* ViewController.m */; };
@@ -165,6 +169,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		339451461F061CB3009ABF89 /* MCRecentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRecentTableViewController.h; sourceTree = "<group>"; };
+		339451471F061CB3009ABF89 /* MCRecentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRecentTableViewController.m; sourceTree = "<group>"; };
+		339451491F06308D009ABF89 /* MCMoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMoreTableViewController.h; sourceTree = "<group>"; };
+		3394514A1F06308D009ABF89 /* MCMoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMoreTableViewController.m; sourceTree = "<group>"; };
+		3394514C1F0634A9009ABF89 /* MCMoreInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMoreInfoTableViewController.h; sourceTree = "<group>"; };
+		3394514D1F0634A9009ABF89 /* MCMoreInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMoreInfoTableViewController.m; sourceTree = "<group>"; };
+		3394514F1F06369A009ABF89 /* MCEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCEditTableViewController.h; sourceTree = "<group>"; };
+		339451501F06369A009ABF89 /* MCEditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCEditTableViewController.m; sourceTree = "<group>"; };
 		33DB72221F04B22900AFCBCF /* MobChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DB72261F04B22900AFCBCF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		33DB72281F04B22900AFCBCF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -498,6 +510,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3394513E1F061C91009ABF89 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				3394513F1F061C91009ABF89 /* Controller */,
+				339451401F061C91009ABF89 /* Model */,
+				339451411F061C91009ABF89 /* View */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		3394513F1F061C91009ABF89 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				339451491F06308D009ABF89 /* MCMoreTableViewController.h */,
+				3394514A1F06308D009ABF89 /* MCMoreTableViewController.m */,
+				3394514C1F0634A9009ABF89 /* MCMoreInfoTableViewController.h */,
+				3394514D1F0634A9009ABF89 /* MCMoreInfoTableViewController.m */,
+				3394514F1F06369A009ABF89 /* MCEditTableViewController.h */,
+				339451501F06369A009ABF89 /* MCEditTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		339451401F061C91009ABF89 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		339451411F061C91009ABF89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		339451421F061C91009ABF89 /* Recent */ = {
+			isa = PBXGroup;
+			children = (
+				339451431F061C91009ABF89 /* Controller */,
+				339451441F061C91009ABF89 /* Model */,
+				339451451F061C91009ABF89 /* View */,
+			);
+			path = Recent;
+			sourceTree = "<group>";
+		};
+		339451431F061C91009ABF89 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				339451461F061CB3009ABF89 /* MCRecentTableViewController.h */,
+				339451471F061CB3009ABF89 /* MCRecentTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		339451441F061C91009ABF89 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		339451451F061C91009ABF89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		33DB72191F04B22900AFCBCF = {
 			isa = PBXGroup;
 			children = (
@@ -1459,10 +1541,11 @@
 		33DB744D1F04B79700AFCBCF /* Mudules */ = {
 			isa = PBXGroup;
 			children = (
+				3394513E1F061C91009ABF89 /* More */,
+				339451421F061C91009ABF89 /* Recent */,
 				33DB744E1F04B79700AFCBCF /* Chat */,
 				33DB74521F04B79700AFCBCF /* Contacts */,
 				33DB74581F04B79700AFCBCF /* Login */,
-				33DB745E1F04B79700AFCBCF /* Mine */,
 			);
 			path = Mudules;
 			sourceTree = "<group>";
@@ -1566,37 +1649,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		33DB745E1F04B79700AFCBCF /* Mine */ = {
-			isa = PBXGroup;
-			children = (
-				33DB745F1F04B79700AFCBCF /* Controller */,
-				33DB74601F04B79700AFCBCF /* Model */,
-				33DB74611F04B79700AFCBCF /* View */,
-			);
-			path = Mine;
-			sourceTree = "<group>";
-		};
-		33DB745F1F04B79700AFCBCF /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		33DB74601F04B79700AFCBCF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		33DB74611F04B79700AFCBCF /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1694,6 +1746,7 @@
 				33DB74361F04B46100AFCBCF /* DDContextFilterLogFormatter.m in Sources */,
 				33DB74161F04B46100AFCBCF /* XMPPMessageDeliveryReceipts.m in Sources */,
 				33DB73E91F04B46100AFCBCF /* XMPPMessage+XEP0045.m in Sources */,
+				3394514E1F0634A9009ABF89 /* MCMoreInfoTableViewController.m in Sources */,
 				33DB73C21F04B46100AFCBCF /* XMPPModule.m in Sources */,
 				33DB73F71F04B46100AFCBCF /* XMPPvCardTempModule.m in Sources */,
 				33DB73E71F04B46100AFCBCF /* XMPPRoomMessageMemoryStorageObject.m in Sources */,
@@ -1753,6 +1806,8 @@
 				33DB74301F04B46100AFCBCF /* GCDAsyncSocket.m in Sources */,
 				33DB740D1F04B46100AFCBCF /* XMPPMessageArchiving_Contact_CoreDataObject.m in Sources */,
 				33DB74191F04B46100AFCBCF /* XMPPStreamManagementStanzas.m in Sources */,
+				3394514B1F06308D009ABF89 /* MCMoreTableViewController.m in Sources */,
+				339451481F061CB3009ABF89 /* MCRecentTableViewController.m in Sources */,
 				33DB73B61F04B46100AFCBCF /* XMPPPlainAuthentication.m in Sources */,
 				33DB73BF1F04B46100AFCBCF /* XMPPIQ.m in Sources */,
 				33DB73E11F04B46100AFCBCF /* XMPPRoomOccupantCoreDataStorageObject.m in Sources */,
@@ -1813,6 +1868,7 @@
 				33DB73C01F04B46100AFCBCF /* XMPPJID.m in Sources */,
 				33DB73C71F04B46100AFCBCF /* XMPPCoreDataStorage.m in Sources */,
 				33DB741C1F04B46100AFCBCF /* XMPPPing.m in Sources */,
+				339451511F06369A009ABF89 /* MCEditTableViewController.m in Sources */,
 				33DB74051F04B46100AFCBCF /* XMPPTransports.m in Sources */,
 				33DB742A1F04B46100AFCBCF /* GCDMulticastDelegate.m in Sources */,
 				33DB74261F04B46100AFCBCF /* XMPPMessage+XEP_0308.m in Sources */,
