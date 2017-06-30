@@ -19,6 +19,9 @@ static NSString *const receiveReuseID = @"received";
 
 @property(nonatomic, strong) NSArray<XMPPMessageArchiving_Message_CoreDataObject *> *messages;
 
+@property(nonatomic, strong) UIImage *myAavatarImage;
+@property(nonatomic, strong) UIImage *othersAvatarImage;
+
 @end
 
 @implementation MCChatViewController
@@ -31,6 +34,12 @@ static NSString *const receiveReuseID = @"received";
     self.chatTableView.rowHeight = UITableViewAutomaticDimension;
     
     [self refreshData];
+    
+    UIImage *myAavatarImage = [UIImage imageWithData:[MCXMPPManager sharedManager].xmppvCard.myvCardTemp.photo];
+    self.myAavatarImage = myAavatarImage;
+    
+    UIImage *othersAvatarImage = [UIImage imageWithData:[[MCXMPPManager sharedManager].xmppAvatar photoDataForJID:self.contactJID]];
+    self.othersAvatarImage = othersAvatarImage;
 }
 
 
@@ -105,9 +114,17 @@ static NSString *const receiveReuseID = @"received";
         
         cell = [tableView dequeueReusableCellWithIdentifier:sendReuseID forIndexPath:indexPath];
         
+        UIImageView *avatarImageView = [cell.contentView viewWithTag:1001];
+        
+        avatarImageView.image = self.myAavatarImage;
+        
     } else { //接收
         
         cell = [tableView dequeueReusableCellWithIdentifier:receiveReuseID forIndexPath:indexPath];
+        
+        UIImageView *avatarImageView = [cell.contentView viewWithTag:1001];
+        
+        avatarImageView.image = self.othersAvatarImage;
     }
     
     UILabel *label = [cell.contentView viewWithTag:1002];

@@ -58,6 +58,10 @@ static NSString *const reuseID = @"contact";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseID forIndexPath:indexPath];
     
+    UIImageView *avatarImageView = [cell.contentView viewWithTag:1001];
+    
+    avatarImageView.image = [UIImage imageWithData:[[MCXMPPManager sharedManager].xmppAvatar photoDataForJID:self.contacts[indexPath.row].jid]];
+    
     UILabel *label = [cell.contentView viewWithTag:1002];
     label.text = self.contacts[indexPath.row].jidStr;
     
@@ -65,16 +69,6 @@ static NSString *const reuseID = @"contact";
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
-// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
@@ -84,21 +78,6 @@ static NSString *const reuseID = @"contact";
         
     }   
 }
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 
 #pragma mark - Navigation
 

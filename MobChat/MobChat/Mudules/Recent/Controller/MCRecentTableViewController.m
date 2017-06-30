@@ -62,6 +62,10 @@ static NSString *const reuseID = @"recent";
     
     XMPPMessageArchiving_Contact_CoreDataObject *recentContact = self.recentContacts[indexPath.row];
     
+    UIImageView *avatarImageView = [cell.contentView viewWithTag:1001];
+    
+    avatarImageView.image = [UIImage imageWithData:[[MCXMPPManager sharedManager].xmppAvatar photoDataForJID:recentContact.bareJid]];
+    
     UILabel *nameLabel = [cell.contentView viewWithTag:1002];
     nameLabel.text = recentContact.bareJidStr;
     
